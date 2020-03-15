@@ -1,17 +1,12 @@
 # github-api
 
 ## Heroku
+The API was published on Heroku. To access it just use the url https://github-file-api.herokuapp.com. 
 
-## Docker
+The only endpoint is path `/files`. It is necessary to inform the GitHub repository link as a query parameter at the time of the request, for example: http://github-file-api.herokuapp.com/files?url=https://github.com/jordankl93/ProxyScala
 
-Two docker images were generated, in which one represents the API and the other the database used by it. These images are published on the Docker Hub, and to access them just access the following links. The images must be pulled in the order listed below.
-
-- [github-api_github-db-mysql](https://hub.docker.com/r/jordankl/github-api_github-db-mysql)
-- [github-api_github-api-java](https://hub.docker.com/r/jordankl/github-api_github-api-java)
-</ul>
-
-This will run API on port 8000 on your machine, so you can open it by navigating to http://localhost in your browser
+To access the API documentation where the instructions for use are shown, follow the links below.
 
 ## Commands
-- API documentation (Swagger): http://localhost:8000/swagger-ui.html
-- API documentation (Json): http://localhost:8000/v2/api-docs
+- API documentation (Swagger): https://github-file-api.herokuapp.com/swagger-ui.html
+- API documentation (Json): https://github-file-api.herokuapp.com/v2/api-docs
