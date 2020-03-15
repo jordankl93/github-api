@@ -1,0 +1,25 @@
+version: '3.4'
+services:
+  github-api-java:
+    container_name: github-api-java
+    build:
+      context: .
+      dockerfile: github.Dockerfile
+    depends_on:
+      - github-db-mysql
+    ports:
+      - "8000:8000"
+    environment:
+      - NOOP=
+      - DB_URL=github-db-mysql:3306
+
+  github-db-mysql:
+    container_name: github-db-mysql
+    build:
+      context: .
+      dockerfile: mysql.Dockerfile
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=github
+      - MYSQL_ROOT_PASSWORD=root
